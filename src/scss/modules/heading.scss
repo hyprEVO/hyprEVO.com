@@ -1,0 +1,12 @@
+.heading{
+  padding:$space-lg 0 $space-lg 0 ;
+  &__logo {
+    @include transition(all 350ms ease-in-out);
+    padding: 0 $space-sm;
+    &-img {
+      max-width: 260px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}

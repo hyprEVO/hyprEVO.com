@@ -1,0 +1,39 @@
+html,
+body {
+  background: $dark-grey;
+  color: white;
+}
+.content {
+  margin: 0 auto;
+  max-width: 960px;
+  width: 100%;
+  padding: 0;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h5 {
+    margin: 0;
+    font-weight: normal;
+    font-family: $haHead;
+    &:before {
+      display: none;
+    }
+  }
+  i{
+    font-family:FontAwesome !important;
+  }
+}
+
+.padded{
+  &-sm{
+    padding:$space-sm;
+  }
+  &-md{
+    padding:$space-md;
+  }
+  &-lg{
+    padding:$space-lg;
+  }
+}

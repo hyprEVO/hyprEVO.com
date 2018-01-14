@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>hyprEVO&trade;: Evolved</title>
+    <meta property="og:title" content="hyprEVO&trade;: Evolved">
+    <meta property="og:site_name" content="hyprEVO&trade;: Evolved">
+    <meta property="og:image" content="http://hyprevo.com/img/fb-o-graph.jpg">
+    <meta name="keywords"
+          content="hyprEVO hypr EVO hypr Evolution  hypREGIME hyprFIGHTteam Zillla GodZillla MarzVindicator DreadKingDave KingFiftyCal SpecsOfTheFli video games xbox playstation pc nintendo sony microsoft">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="description" property="og:description"
+          content="hyprEVO&trade; is a media and content network focused on the evolving worlds of video games and technology.">
+    <link href='css/style.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="img/favicon.png"/>
+</head>
+<body>
+
+<script>
+
+
+</script>
+<!--handlebars template-->
+<script type="text/x-handlebars-template" id="js-newsLink-template">
+    {{#each this}}
+    <a href="{{this.link.href}}" class="main__contentBlock-newsLink js-contentBlock-news" target="_blank"
+       data-bgImg="">
+        <div class="main__contentBlock-contentWrap">
+            <div class="main__contentBlock-heading">
+                <i class="fa fa-rss" aria-hidden="true"></i> News
+            </div>
+            <div class="main__contentBlock-subhead main__contentBlock-subhead--news">
+                {{this.title}}
+            </div>
+        </div>
+        <img src="{{this.content.url}}" alt="">
+    </a>
+    {{/each}}
+</script>
+
+
+<!--Meat & Potatoes-->
+<div class="heading">
+    <div class="heading__logo  js-heading__logo">
+        <img class="heading__logo-img" title="Evolving soon..." src="img/logotype.svg" alt="">
+    </div>
+</div>
+<div class='main'>
+    <div class="main__contentBlock-wrap">
+        <div class="main__contentBlock main__contentBlock--left">
+            <p class="main__contentBlock-blurb"><span>hypr<span>EVO</span>&trade;</span> is a team of gamers and media
+                creators
+                that
+                have joined forces to spread our influence across the globe. We're hard at work growing our empire so
+                check
+                back here for updates. In the meantime, connect with us on a variety of other channels like <a
+                        target="_blank" title="hyprEVO: Facebook"
+                        href="https://www.facebook.com/hyprevofb/">Facebook</a>,
+                <a target="_blank" title="hyprEVO: Instagram" href="https://www.instagram.com/hyprEVO/">Instagram</a>,
+                <a
+                        target="_blank" title="hyprEVO: Twitter" href="https://twitter.com/hyprevo">Twitter</a>, <a
+                        target="_blank" title="hyprEVO: Google+" href="https://plus.google.com/+HyprEvo">Google+</a> and
+                <a
+                        target="_blank" title="hyprEVO: Youtube"
+                        href="https://www.youtube.com/channel/UCRS9SseT4i-HjezhEKMX2Sg">Youtube</a>. Also check out our
+                official podcast <span>hypr<span>STORM</span>&trade;</span> on <a target="_blank"
+                                                                                  title="hyprSTORM Podcast"
+                                                                                  href="https://soundcloud.com/hypr-evo">SoundCloud</a>.
+            </p>
+        </div>
+        <div class="main__contentBlock main__contentBlock--right">
+            <div class="main__contentBlock-content main__contentBlock-content--feat ">
+                <a href="#">
+                    <div class="main__contentBlock-heading">
+                        <i class="fa fa-bolt" aria-hidden="true"></i> Featured Content
+                    </div>
+                    <div class="main__contentBlock-subhead">
+                        hyprSTORM #5: The Mass Effect Episode
+                    </div>
+                    <div class="main__contentBlock-descrip">
+                        The gang sits down to discuss some of our favorite moments, characters and memories from one of
+                        our favorite franchises, Mass Effect.
+                    </div>
+                </a>
+            </div>
+            <div class="main__contentBlock-content main__contentBlock-content--news" id="js-newsLink-wrap">
+
+                <div class="main__contentBlock-subhead padded-lg">
+                    Loading...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <ul class="footer__social js-footer-social">
+        <li>
+            <a target="_blank" title="hyprEVO: Facebook" href="https://www.facebook.com/hyprevofb/"><i
+                    class="fa fa-facebook"></i></a>
+        </li>
+        <li>
+            <a target="_blank" title="hyprEVO: Instagram" href="https://www.instagram.com/hyprEVO/"><i
+                    class="fa fa-instagram"></i></a>
+        </li>
+        <li>
+            <a target="_blank" title="hyprEVO: Twitter" href="https://twitter.com/hyprevo"><i
+                    class="fa fa-twitter"></i></a>
+        </li>
+        <li>
+            <a target="_blank" title="hyprEVO: Google+" href="https://plus.google.com/+HyprEvo"><i
+                    class="fa fa-google-plus"></i></a>
+        </li>
+        <li>
+            <a target="_blank" title="hyprEVO: Youtube"
+               href="https://www.youtube.com/channel/UCRS9SseT4i-HjezhEKMX2Sg"><i
+                    class="fa fa-youtube-play"></i></a>
+        </li>
+        <li>
+            <a target="_blank" title="hyprSTORM Podcast" href="https://soundcloud.com/hypr-evo"><i
+                    class="fa fa-soundcloud"></i></a>
+        </li>
+
+    </ul>
+    <div class="footer__copyright">
+        <p>©2018 hyprEVO, All rights reserved. Evolving Soon.</p>
+    </div>
+    <div class="footer__logo">
+        <img class="footer__logo-img" title="Evolving soon..." src="img/logo.svg" alt="">
+    </div>
+</div>
+
+<!--Scripts-->
+<script src="js/app.js"></script>
+</body>
+</html>
+
+

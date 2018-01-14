@@ -1,0 +1,40 @@
+.footer {
+  &__social {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin:0 auto $space-sm auto;
+    max-width: 365px;
+    padding: 0;
+    @include radius(6px);
+    li {
+      display: inline-block;
+      margin: 0 $space-sm;
+      a {
+        color: $green;
+        i {
+          font-size: 20px;
+        }
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+  &__copyright {
+    text-align: center;
+    color: #535353;
+    font-family:$haHead;
+    margin-bottom: $space-md;
+    font-weight:bold;
+  }
+  &__logo {
+    @include transition(all 350ms ease-in-out);
+    padding: 0 $space-sm;
+    &-img {
+      max-width: $space-sm;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}

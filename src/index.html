@@ -18,7 +18,7 @@
     <link href='css/style.css' rel='stylesheet'>
     <link rel="icon" type="image/png" href="img/favicon.png"/>
 </head>
-<body>
+<body class="no-js">
 
 <script>
 
@@ -27,7 +27,8 @@
 <!--handlebars template-->
 <script type="text/x-handlebars-template" id="js-newsLink-template">
     {{#each this}}
-    <a href="{{this.link.href}}" class="main__contentBlock-newsLink js-contentBlock-news" target="_blank"
+    <a href="{{this.link.href}}" class="main__contentBlock-newsLink js-contentBlock-news" title=" {{this.title}}"
+       target="_blank"
        data-bgImg="">
         <div class="main__contentBlock-contentWrap">
             <div class="main__contentBlock-heading">
@@ -37,16 +38,32 @@
                 {{this.title}}
             </div>
         </div>
-        <img src="{{this.content.url}}" alt="">
+        <img src="{{extractURL this.summary.content}}" alt="">
     </a>
     {{/each}}
+</script>
+<script type="text/x-handlebars-template" id="js-feat-template">
+    <a href="{{url}}" class="main__contentBlock-content main__contentBlock-content--feat " title="{{title}} #hyprEVO"
+       target="_blank" style="background-image:url({{imgPath}});">
+
+        <div class="main__contentBlock-heading">
+            <i class="fa fa-{{icon}}" aria-hidden="true"></i> Featured Content: {{contentType}}
+        </div>
+        <div class="main__contentBlock-subhead">
+            {{title}}
+        </div>
+        <div class="main__contentBlock-descrip">
+            {{desc}}
+        </div>
+
+    </a>
 </script>
 
 
 <!--Meat & Potatoes-->
 <div class="heading">
     <div class="heading__logo  js-heading__logo">
-        <img class="heading__logo-img" title="Evolving soon..." src="img/logotype.svg" alt="">
+        <img class="heading__logo-img" title="Always Evolving" src="img/logotype.svg" alt="">
     </div>
 </div>
 <div class='main'>
@@ -71,26 +88,16 @@
                                                                                   title="hyprSTORM Podcast"
                                                                                   href="https://soundcloud.com/hypr-evo">SoundCloud</a>.
             </p>
+            <video loop="true" muted="" autoplay="" id="bgvid" preload="auto" class="hide-for-small-only">
+                <source src="vid/heBGvid.mp4">
+            </video>
         </div>
-        <div class="main__contentBlock main__contentBlock--right">
-            <div class="main__contentBlock-content main__contentBlock-content--feat ">
-                <a href="#">
-                    <div class="main__contentBlock-heading">
-                        <i class="fa fa-bolt" aria-hidden="true"></i> Featured Content
-                    </div>
-                    <div class="main__contentBlock-subhead">
-                        hyprSTORM #5: The Mass Effect Episode
-                    </div>
-                    <div class="main__contentBlock-descrip">
-                        The gang sits down to discuss some of our favorite moments, characters and memories from one of
-                        our favorite franchises, Mass Effect.
-                    </div>
-                </a>
-            </div>
+        <div class="main__contentBlock main__contentBlock--right js-feat-wrap">
+
             <div class="main__contentBlock-content main__contentBlock-content--news" id="js-newsLink-wrap">
 
                 <div class="main__contentBlock-subhead padded-lg">
-                    Loading...
+                    Loading News...
                 </div>
             </div>
         </div>
@@ -126,7 +133,12 @@
 
     </ul>
     <div class="footer__copyright">
-        <p>©2018 hyprEVO, All rights reserved. Evolving Soon.</p>
+        <p>©2018 hyprEVO, All rights reserved. Always Evolving. Version <a href="https://github.com/hyprEVO/hyprEVO"
+                                                                           target="_blank" title="Source">4.0.0 beta</a>.
+            News powered by <a href="https://www.gameinformer.com/" title="GameInformer"
+                               target="_blank">GameInformer</a> & <a
+                    href="https://www.yahoo.com/"
+                    target="_blank" title="Yahoo">Yahoo</a></p>
     </div>
     <div class="footer__logo">
         <img class="footer__logo-img" title="Evolving soon..." src="img/logo.svg" alt="">

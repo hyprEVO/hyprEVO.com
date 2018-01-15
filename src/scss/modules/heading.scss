@@ -3,6 +3,8 @@
   &__logo {
     @include transition(all 350ms ease-in-out);
     padding: 0 $space-sm;
+    position: relative;
+    z-index: 1;
     &-img {
       max-width: 260px;
       margin: 0 auto;

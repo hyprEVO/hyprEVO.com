@@ -9,7 +9,10 @@
     @include radius(6px);
     li {
       display: inline-block;
-      margin: 0 $space-sm;
+      margin: 0 $space-sm $space-sm 0;
+      @media all and(min-width:$screen-sm) {
+        margin: 0 $space-sm;
+      }
       a {
         color: $green;
         i {
@@ -23,14 +26,19 @@
   }
   &__copyright {
     text-align: center;
-    color: #535353;
-    font-family:$haHead;
+    color: $light-grey;
+    font-size:.8rem;
+    font-family:$haBody;
     margin-bottom: $space-md;
-    font-weight:bold;
+    a{
+      color:$green;
+      text-decoration:none;
+    }
   }
   &__logo {
     @include transition(all 350ms ease-in-out);
     padding: 0 $space-sm;
+    margin-bottom:$space-lg;
     &-img {
       max-width: $space-sm;
       margin: 0 auto;

@@ -10,5 +10,5 @@
  *
  */
 $(document).ready(function () {
-    $('body').removeClass('no-js');
+    //$('body').removeClass('no-js');
 });

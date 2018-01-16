@@ -12,11 +12,11 @@
 $(document).ready(function () {
     //Featured Post
     var featData = {
-        contentType: "Video",
-        title: "Dread King Dave // The Beginning",
-        desc: "Check out the latest montage from Dread King Dave composed of some of his hottest Destiny 2 clips.",
-        url: "https://www.youtube.com/watch?v=VcAqrOZWI6M",
-        imgPath: "img/featImg-DKD.jpg",
+        contentType: "hyprClip",
+        title: "Dissidia Final Fantasy NT - MarzVindicator",
+        desc: "Kill it with fire...#TopGoon #BattleRoyale #FinalFantasy #Dissidia #DissidiaNT #SquareEnix #PS4 #hyprEVO #hyprClips #gaming ⠀GT: MarzVindicator",
+        url: "https://twitter.com/hyprEvo/status/953082892971859968",
+        imgPath: "img/featImg-hClips.jpg",
         icon: "video-camera"
     };
     var templateSource = $('#js-feat-template').html();
@@ -24,4 +24,4 @@ $(document).ready(function () {
     $('.js-feat-wrap').prepend(compiledTemplate(featData));
 });
 
-
+ 

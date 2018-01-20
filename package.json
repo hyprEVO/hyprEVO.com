@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.18.8",
+    "gulp-autoprefixer": "^4.1.0",
     "gulp-clean-css": "^3.0.3",
     "gulp-concat": "^2.6.1",
     "gulp-deploy-ftp": "^1.0.0",

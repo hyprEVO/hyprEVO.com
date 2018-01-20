@@ -18,7 +18,7 @@
     <link href='css/style.css?v=4.0.1' rel='stylesheet'>
     <link rel="icon" type="image/png" href="img/favicon.png"/>
 </head>
-<body >
+<body>
 
 <script>
 
@@ -27,24 +27,26 @@
 <!--handlebars template-->
 <script type="text/x-handlebars-template" id="js-newsLink-template">
     {{#each this}}
-    <a href="{{this.link.href}}" class="main__contentBlock-newsLink js-contentBlock-news" title=" {{this.title}}"
-       target="_blank"
-       data-bgImg="">
-        <div class="main__contentBlock-contentWrap">
-            <div class="main__contentBlock-heading">
-                <i class="fa fa-rss" aria-hidden="true"></i> News
-            </div>
-            <div class="main__contentBlock-subhead main__contentBlock-subhead--news">
-                {{this.title}}
-            </div>
-        </div>
-        <img src="{{extractURL this.summary.content}}" alt="">
-    </a>
+
+      <a href="{{this.link.href}}" class="main__contentBlock-newsLink js-contentBlock-news" title=" {{this.title}}"
+         target="_blank"data-bgImg="">
+          <div class="main__contentBlock-contentWrap">
+              <div class="main__contentBlock-heading">
+                  <i class="fa fa-rss" aria-hidden="true"></i> News
+              </div>
+              <div class="main__contentBlock-subhead main__contentBlock-subhead--news">
+                  {{this.title}}
+              </div>
+          </div>
+          <img src="{{extractURL this.summary.content}}" alt="">
+      </a>
+
     {{/each}}
 </script>
 <script type="text/x-handlebars-template" id="js-feat-template">
-    <a href="{{url}}" class="main__contentBlock-content main__contentBlock-content--feat " title="{{title}} #hyprEVO"
-       target="_blank" style="background-image:url({{imgPath}});">
+
+    <a href="{{url}}" class="main__contentBlock-content main__contentBlock-content--feat js-feat-desk" title="{{title}} #hyprEVO"
+       target="_blank" style="background-image:url({{imgPath}}); ">
 
         <div class="main__contentBlock-heading">
             <i class="fa fa-{{icon}}" aria-hidden="true"></i> Featured Content: {{contentType}}
@@ -57,8 +59,27 @@
         </div>
 
     </a>
+
 </script>
 
+<script type="text/x-handlebars-template" id="js-feat-template-mob">
+
+<div style="display:block">    <a href="{{url}}" class="main__contentBlock-content main__contentBlock-content--feat js-feat-mob" title="{{title}} #hyprEVO"
+            target="_blank" style="background-image:url({{imgPath}}); ">
+
+    <div class="main__contentBlock-heading">
+        <i class="fa fa-{{icon}}" aria-hidden="true"></i> Featured Content: {{contentType}}
+    </div>
+    <div class="main__contentBlock-subhead">
+        {{title}}
+    </div>
+    <div class="main__contentBlock-descrip">
+        {{desc}}
+    </div>
+
+</a></div>
+
+</script>
 
 <!--Meat & Potatoes-->
 <div class="heading">
@@ -94,12 +115,14 @@
         </div>
         <div class="main__contentBlock main__contentBlock--right js-feat-wrap">
 
-            <div class="main__contentBlock-content main__contentBlock-content--news" id="js-newsLink-wrap">
+         <div style="display:block;">
+             <div class="main__contentBlock-content main__contentBlock-content--news" id="js-newsLink-wrap">
 
-                <div class="main__contentBlock-subhead padded-lg">
-                    Loading News...
-                </div>
-            </div>
+                 <div class="main__contentBlock-subhead padded-lg">
+                     Loading News...
+                 </div>
+             </div>
+         </div>
         </div>
     </div>
 </div>
@@ -144,9 +167,9 @@
         <img class="footer__logo-img" title="Evolving soon..." src="img/logo.svg" alt="">
     </div>
 </div>
-
+<input type="text" hidden id="js-catchData">
 <!--Scripts-->
-<script src="js/app.js"></script>
+<script src="js/app.js?v=4.0.1"></script>
 </body>
 </html>
 

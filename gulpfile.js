@@ -17,6 +17,7 @@ var ftp = require('vinyl-ftp');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
+var autoprefixer = require('gulp-autoprefixer');
 var localFilesGlob = ['./build/**'];
 
 
@@ -69,6 +70,7 @@ gulp.task('make-styles', function () {
         .pipe(cleanCSS({
             compatibility: 'ie8'
         }))
+        .pipe(autoprefixer())
         .pipe(gulp.dest( buildDir +'css/'))
         .pipe(gulp.dest( altDir +'css/'));
 });

@@ -14,9 +14,9 @@
 
 //Featured Post Object
 var featData = {
-    contentType: "SpecsOfTheFli",
-    title: "hyprCLIPS // Destiny 2 ",
-    desc: "#NeverGetsOld #Destiny2 #Bungie #hypREGIME #hyprEVO #hyprClips #Destiny #gaming #SpecsOfTheFli",
+    contentType: " hyprCLIP",
+    title: "SpecsOfTheFli  //  Destiny 2 ",
+    desc: "Destiny 2 gameplay clip  #NeverGetsOld #Destiny2 #Bungie #hypREGIME #hyprEVO #hyprClips #Destiny #gaming #SpecsOfTheFli",
     url: "https://twitter.com/hyprEvo/status/954526479626526720",
     imgPath: "img/featImg-hClips.jpg",
     icon: "video-camera"
@@ -41,14 +41,12 @@ function doHandlebars(data, template, container, place) {
     } else {
         $(container).html(compiledTemplate(data));
     }
-    console.log("did handlebars");
 }
 
 //Easy method for encoding url then injecting needed YQL script to get feed
 function loadFeed(url, key) {
 
     var encoded = encodeURIComponent(url);
-    console.log('encoded', encoded);
     // https://developer.yahoo.com/yql/console/
     //JSON encoded RSS feed URL
     // var GSjson = "'https%3A%2F%2Fwww.gamespot.com%2Ffeeds%2Fnews%2F'";
@@ -84,32 +82,26 @@ function handleResponseMVfeat(response) {
 //News feed
 function handleResponseNews(response) {
     var cleanData = response.query.results.feed.entry.slice(0, 4);
-
     doHandlebars(cleanData, "#js-newsLink-template", ".js-news-wrap", "html");
 }
 
 //QC Youtube Feed
 function handleResponseQCyt(response) {
-    console.log("quesy", response.query.results.feed.entry);
     var cleanData = response.query.results.feed.entry;
-
-    doHandlebars(cleanData.slice(0,5), "#js-vidListQC-template", ".js-vidQC-wrap", "append");
+    doHandlebars(cleanData.slice(0, 5), "#js-vidListQC-template", ".js-vidQC-wrap", "append");
 }
 
 //MV Youtube Feed
 function handleResponseMVyt(response) {
-    console.log("quesy", response.query.results.feed.entry);
     var cleanData = response.query.results.feed.entry;
-
-    doHandlebars(cleanData.slice(0,5), "#js-vidListMV-template", ".js-vidMV-wrap", "append");
+    doHandlebars(cleanData.slice(0, 5), "#js-vidListMV-template", ".js-vidMV-wrap", "append");
 }
-
 
 
 //------------------DOC READY------------------//
 $(document).ready(function () {
 
-    loadFeed("http://www.gameinformer.com/b/mainfeed.aspx?Tags=news","News");
+    loadFeed("http://www.gameinformer.com/b/mainfeed.aspx?Tags=news", "News");
     loadFeed("http://www.marzvindicator.com/feeds/posts/default?alt=rss", "MVfeat");
     loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCNj11HAYuO0LaCKKGSGPL8g", "QCyt");
     loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCQkZLuIepmT7wCFGhE_1E_A", "MVyt");

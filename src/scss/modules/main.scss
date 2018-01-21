@@ -1,7 +1,7 @@
 $varWidth: 1200px;
 .main {
   @include clearfix();
-  margin-bottom:$space-sm;
+  margin-bottom:$space-md;
   &__contentBlock {
     height: auto;
     width: 100%;
@@ -27,7 +27,10 @@ $varWidth: 1200px;
       display: flex;
       flex-direction: column;
       width: 95%;
-
+      border-top: 1px solid #1d1d1d;
+      -webkit-box-shadow: 0px 8px 10px -1px rgba(0,0,0,0.15);
+      -moz-box-shadow: 0px 8px 10px -1px rgba(0,0,0,0.15);
+      box-shadow: 0px 8px 10px -1px rgba(0,0,0,0.15);
       @media all and (min-width: 600px) {
         width: 85%;
         max-width: 1372px;
@@ -92,7 +95,7 @@ $varWidth: 1200px;
       &-node{
         border:none;
         @media all and (min-width: $screen-md) {
-          border-right:1px solid #4a4f35;
+          border-right:1px solid $accent-grey;
           &:last-child{
             border:none;
           }
@@ -232,6 +235,8 @@ $varWidth: 1200px;
       &-team {
         font-size: 17px;
         padding-top: 0;
+        border-bottom: 1px solid #323535;
+        margin-bottom: $space-md;
       }
     }
     &-subhead {
@@ -240,14 +245,14 @@ $varWidth: 1200px;
       margin-bottom: $space-md;
       &--news {
         font-size: 20px;
-        max-height: 130px;
+        max-height: 100px;
         overflow: hidden;
         &-feat{
          height:auto;
           overflow: hidden;
           text-overflow: ellipsis;
           @media all and (min-width: $screen-md) {
-            height: 130px;
+            height: 82px;
           }
         }
       }
@@ -291,7 +296,32 @@ $varWidth: 1200px;
     }
     &-QC {
       background-image: url('../img/featImg-QC.jpg');
-    
+      position: relative;
+
+
+      &:after{
+        content:"";
+        height:1px;
+        width:100%;
+        background-color:$accent-grey;
+        right:0;
+        bottom:0;
+        z-index:1;
+        position:absolute;
+      }
+      @media all and (min-width: $varWidth) {
+        &:after{
+          content:"";
+          height:100%;
+          width:1px;
+          background-color:$accent-grey;
+          right:0;
+          top:0;
+          z-index:1;
+          position:absolute;
+        }
+      }
+
     }
     &-MV {
       background-image: url('../img/featImg-MV.jpg');
@@ -306,7 +336,7 @@ $varWidth: 1200px;
       display: block;
       widtH: 100%;
       padding-top: $space-sm;
-      font-size: 13px;
+      font-size: 16px;
       float: none;
       a {
         &:hover {

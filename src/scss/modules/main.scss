@@ -1,5 +1,7 @@
+$varWidth: 1200px;
 .main {
   @include clearfix();
+  margin-bottom:$space-sm;
   &__contentBlock {
     height: auto;
     width: 100%;
@@ -13,8 +15,11 @@
       height: 2000px;
       margin-top: -1000px;
     }
-    @media all and (min-width: 1668px) {
+    @media all and (min-width: $varWidth) {
       width: 50%;
+      &-full {
+        width: 100%;
+      }
     }
     &-wrap {
       background: #0a0a0a;
@@ -24,10 +29,10 @@
       width: 95%;
 
       @media all and (min-width: 600px) {
-        width: 70%;
+        width: 85%;
         max-width: 1372px;
       }
-      @media all and (min-width: 1668px) {
+      @media all and (min-width: $varWidth) {
         flex-direction: row;
       }
       @include clearfix();
@@ -45,6 +50,7 @@
     }
     &-newsLink {
       @include transition(all 250ms ease-in-out);
+      height:100%;
       padding: $space-md;
       background: #1e1e1e;
       position: relative;
@@ -54,6 +60,8 @@
         left: 0;
         top: 0;
         opacity: .1;
+        width: 100% !important;
+        height: 100% !important;
       }
       & .hasBg {
         &:after {
@@ -81,6 +89,16 @@
           position: absolute;
         }
       }
+      &-node{
+        border:none;
+        @media all and (min-width: $screen-md) {
+          border-right:1px solid #4a4f35;
+          &:last-child{
+            border:none;
+          }
+        }
+
+      }
     }
     &-blurb {
       padding: 170px;
@@ -92,6 +110,7 @@
       background: rgba(17, 17, 17, 0.85);
       z-index: 1;
       position: relative;
+      height: 100%;
       span {
         color: $green;
       }
@@ -108,6 +127,11 @@
       }
       @media all and (max-width: 1667px) {
         padding: $space-lg;
+        padding-top: 173px;
+      }
+      @media all and (max-width: 1200px) {
+        padding: $space-lg;
+
       }
       @media all and (max-width: 480px) {
         padding: $space-md;
@@ -136,7 +160,7 @@
           @include transition(all 250ms ease-in-out);
           transform: scale(1);
         }
-        @media all and (min-width: 1668px) {
+        @media all and (min-width: $varWidth) {
           padding: $space-lg;
         }
         @include transition(all 250ms ease-in-out);
@@ -168,6 +192,7 @@
       }
       &--news {
         display: flex;
+        height:100%;
         flex-direction: column;
         @media all and (min-width: $screen-md) {
           display: flex;
@@ -198,21 +223,33 @@
     }
     &-heading {
       font-family: $altHead;
-      font-size: 15px;
+      font-size: 13px;
       text-transform: uppercase;
       font-weight: bold;
       .fa {
         color: $green;
       }
+      &-team {
+        font-size: 17px;
+        padding-top: 0;
+      }
     }
     &-subhead {
       font-family: $haHead;
-      font-size: 24px;
+      font-size: 25px;
       margin-bottom: $space-md;
       &--news {
         font-size: 20px;
         max-height: 130px;
         overflow: hidden;
+        &-feat{
+         height:auto;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          @media all and (min-width: $screen-md) {
+            height: 130px;
+          }
+        }
       }
     }
     &-descrip {
@@ -222,20 +259,115 @@
       overflow: hidden;
     }
   }
+  &__featChannel {
+    background-position-x: 70%;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: black;
+    width: 100%;
+    float: none;
+    @media all and (min-width: $varWidth) {
+      width: 50%;
+      float: left;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      i {
+        @include transition(all 250ms ease-in-out);
+      }
+      @include transition(all 250ms ease-in-out);
+      &:hover {
+        @include transition(all 250ms ease-in-out);
+        i {
+          @include transition(all 250ms ease-in-out);
+          padding-right: 14px;
+        }
+        color: $green;
+      }
+    }
+    &-QC {
+      background-image: url('../img/featImg-QC.jpg');
+    
+    }
+    &-MV {
+      background-image: url('../img/featImg-MV.jpg');
+    }
+    .main__contentBlock-subhead {
+      max-width: 93%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .teamSocial {
+      display: block;
+      widtH: 100%;
+      padding-top: $space-sm;
+      font-size: 13px;
+      float: none;
+      a {
+        &:hover {
+          i {
+            padding-right: 0;
+          }
+        }
+      }
+      a:first-child {
+        padding-left: 0;
+      }
+      @media all and (min-width: $screen-md) {
+        display: inline;
+        width: auto;
+        padding-top: 0;
+        float: right;
+        a:first-child {
+          padding-left: $space-sm;
+        }
+      }
+    }
+    &:before{
+      content: "";
+      height: 2px;
+      width: 100%;
+      top: 0;
+      background: $green;
+      left: 0;
+      position: absolute;
+      opacity:0;
+        @include transition(all 200ms ease-in-out);
+    }
+    &:hover {
+      position: relative;
+      &:before {
+          @include transition(all 200ms ease-in-out);
+
+        opacity:1;
+      }
+    }
+    .SmLetter{
+      font-size:14px;
+    }
+  }
   &__heading {
     color: #fff;
     text-align: center;
     @include transition(all 950ms ease-in-out);
     font-size: 2em;
   }
-  margin-bottom: $space-lg;
+  &.podcast{
+    max-height:500px;
+  }
   @include transition(all 700ms ease-in-out);
-  opacity:1;
+  opacity: 1;
 }
-body.no-js{
-  .main{
+
+body.no-js {
+  .main {
     @include transition(all 700ms ease-in-out);
-    opacity:0;
+    opacity: 0;
   }
 }
 

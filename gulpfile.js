@@ -18,6 +18,7 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 var autoprefixer = require('gulp-autoprefixer');
+var fileinclude = require('gulp-file-include');
 var localFilesGlob = ['./build/**'];
 
 
@@ -26,7 +27,6 @@ var localDir = "http://localhost/hyprEVO/";
 var srcDir = "./src/";
 var buildDir = "./build/";
 var altDir = "C:/xampp/htdocs/hyprEVO/";
-
 
 
 // -- UTIL -- //
@@ -59,7 +59,6 @@ gulp.task('reload', function () {
 });
 
 
-
 // -- BASE BUILD TASKS -- //
 
 
@@ -71,8 +70,8 @@ gulp.task('make-styles', function () {
             compatibility: 'ie8'
         }))
         .pipe(autoprefixer())
-        .pipe(gulp.dest( buildDir +'css/'))
-        .pipe(gulp.dest( altDir +'css/'));
+        .pipe(gulp.dest(buildDir + 'css/'))
+        .pipe(gulp.dest(altDir + 'css/'));
 });
 gulp.task('make-sstyles', function () {
     runSequence('base-dev',
@@ -83,10 +82,9 @@ gulp.task('make-js', function () {
 
     return gulp.src([srcDir + 'js/lib/*.js', srcDir + 'js/core/*.js'])
         .pipe(concat('app.js'))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest(buildDir + 'js/'))
         .pipe(gulp.dest(altDir + 'js/'));
-
 });
 
 //Image min, make-image --> build
@@ -102,53 +100,53 @@ gulp.task('make-image', function () {
 gulp.task('make-rest', function () {
     return gulp.src('')
         .pipe(dirSync(srcDir, buildDir, {
-            ignore: ['img', 'scss','css','js','js/**']
+            ignore: ['html','modules', 'img', 'scss', 'css', 'js', 'js/**']
         }))
         .pipe(dirSync(srcDir, altDir, {
-            ignore: ['img', 'scss','css','js','js/**']
+            ignore: ['html', 'modules', 'img', 'scss', 'css', 'js', 'js/**']
         }));
 });
 
-//(styles, js, image, sync rest)
+gulp.task('make-html', function () {
+    gulp.src([srcDir + 'index.html'])
+        .pipe(fileinclude())
+        .pipe(gulp.dest(altDir))
+        .pipe(gulp.dest(buildDir));
+});
+//(styles, js,, sync rest)
 gulp.task('construct', function () {
     runSequence('clean',
         'make-styles',
         'make-js',
+        'make-html',
         'make-rest');
 });
 
-
-
-//-- BUILD EXTENSION --//
-
-
-
-//Send to dev destingation
-gulp.task('to-dev', function () {
-    return gulp.src('')
-        .pipe(dirSync(buildDir, 'C:/xampp/htdocs/DEV/hA', {}));
+//(styles, js, image, sync rest)
+gulp.task('construct-all', function () {
+    runSequence('clean',
+        'make-styles',
+        'make-js',
+        'make-html',
+        'make-image',
+        'make-rest');
 });
 
-gulp.task('to-dev-reload', function () {
-    runSequence('to-dev',
-        'reload');
-});
 
 //-- WATCHERS --//
 
 
 gulp.task('watch', function () {
     //Source
-    gulp.watch(['./src/*.html'], ['make-rest','reload']);
-    gulp.watch(['./src/*.php'], ['make-rest','reload']);
-    gulp.watch(['./src/scss/*.scss', './src/scss/*/*.scss'], ['make-styles','reload']);
-    gulp.watch(['./src/js/**/*.js'], ['make-js','reload']);
-    gulp.watch(['./src/img/**'], ['make-rest','reload']);
+    gulp.watch(['./src/*.html', './src/*.html'], ['make-html','make-rest', 'reload']);
+    gulp.watch(['./src/*.php'], ['make-rest', 'reload']);
+    gulp.watch(['./src/scss/*.scss', './src/scss/*/*.scss'], ['make-styles', 'reload']);
+    gulp.watch(['./src/js/**/*.js'], ['make-js', 'reload']);
+    gulp.watch(['./src/img/**'], ['make-rest', 'reload']);
 });
-
 
 
 // -- Default -- //
 
-gulp.task('local', ['clean','construct', 'sync', 'watch']);
+gulp.task('local', ['clean', 'construct', 'sync', 'watch']);
 gulp.task('serve', ['sync', 'watch']);

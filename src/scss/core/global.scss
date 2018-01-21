@@ -43,6 +43,17 @@ body {
   }
 }
 
+.content{
+  box-sizing:border-box;
+  h2{
+    text-transform: uppercase;
+    font-family: $altHead;
+  }
+  h3{
+    //font-family: $altHead;
+    color:$green;
+  }
+}
 .padded{
   &-sm{
     padding:$space-sm;
@@ -53,6 +64,37 @@ body {
   &-lg{
     padding:$space-lg;
   }
+}
+.padded-topBottom{
+  &-sm{
+    padding:$space-sm 0;
+  }
+  &-md{
+    padding:$space-md 0;
+  }
+  &-lg{
+    padding:$space-lg 0;
+  }
+}
+.padded-leftRight{
+  &-sm{
+    padding:0 $space-sm;
+  }
+  &-md{
+    padding:0 $space-md;
+  }
+  &-lg{
+    padding:0 $space-lg;
+  }
+}
+.nopad-left{
+  padding-left:0;
+}
+.centered{
+  text-align:center;
+}
+.hyprGreen{
+  color:$green;
 }
 
 //Common media queries, with color test

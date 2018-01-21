@@ -19,158 +19,21 @@
     <link rel="icon" type="image/png" href="img/favicon.png"/>
 </head>
 <body>
-
-<script>
-
-
-</script>
-<!--handlebars template-->
-<script type="text/x-handlebars-template" id="js-newsLink-template">
-    {{#each this}}
-
-      <a href="{{this.link.href}}" class="main__contentBlock-newsLink js-contentBlock-news" title=" {{this.title}}"
-         target="_blank"data-bgImg="">
-          <div class="main__contentBlock-contentWrap">
-              <div class="main__contentBlock-heading">
-                  <i class="fa fa-rss" aria-hidden="true"></i> News
-              </div>
-              <div class="main__contentBlock-subhead main__contentBlock-subhead--news">
-                  {{this.title}}
-              </div>
-          </div>
-          <img src="{{extractURL this.summary.content}}" alt="">
-      </a>
-
-    {{/each}}
-</script>
-<script type="text/x-handlebars-template" id="js-feat-template">
-
-    <a href="{{url}}" class="main__contentBlock-content main__contentBlock-content--feat js-feat-desk" title="{{title}} #hyprEVO"
-       target="_blank" style="background-image:url({{imgPath}}); ">
-
-        <div class="main__contentBlock-heading">
-            <i class="fa fa-{{icon}}" aria-hidden="true"></i> Featured Content: {{contentType}}
-        </div>
-        <div class="main__contentBlock-subhead">
-            {{title}}
-        </div>
-        <div class="main__contentBlock-descrip">
-            {{desc}}
-        </div>
-
-    </a>
-
-</script>
-
-<script type="text/x-handlebars-template" id="js-feat-template-mob">
-
-<div style="display:block">    <a href="{{url}}" class="main__contentBlock-content main__contentBlock-content--feat js-feat-mob" title="{{title}} #hyprEVO"
-            target="_blank" style="background-image:url({{imgPath}}); ">
-
-    <div class="main__contentBlock-heading">
-        <i class="fa fa-{{icon}}" aria-hidden="true"></i> Featured Content: {{contentType}}
-    </div>
-    <div class="main__contentBlock-subhead">
-        {{title}}
-    </div>
-    <div class="main__contentBlock-descrip">
-        {{desc}}
-    </div>
-
-</a></div>
-
-</script>
+<!--Handlebars templates-->
+@@include('modules/handlebars/templates.html')
 
 <!--Meat & Potatoes-->
-<div class="heading">
-    <div class="heading__logo  js-heading__logo">
-        <img class="heading__logo-img" title="Always Evolving" src="img/logotype.svg" alt="">
-    </div>
-</div>
-<div class='main'>
-    <div class="main__contentBlock-wrap">
-        <div class="main__contentBlock main__contentBlock--left">
-            <p class="main__contentBlock-blurb"><span>hypr<span>EVO</span>&trade;</span> is a team of gamers and media
-                creators
-                that
-                have joined forces to spread our influence across the globe. We're hard at work growing our empire so
-                check
-                back here for updates. In the meantime, connect with us on a variety of other channels like <a
-                        target="_blank" title="hyprEVO: Facebook"
-                        href="https://www.facebook.com/hyprevofb/">Facebook</a>,
-                <a target="_blank" title="hyprEVO: Instagram" href="https://www.instagram.com/hyprEVO/">Instagram</a>,
-                <a
-                        target="_blank" title="hyprEVO: Twitter" href="https://twitter.com/hyprevo">Twitter</a>, <a
-                        target="_blank" title="hyprEVO: Google+" href="https://plus.google.com/+HyprEvo">Google+</a> and
-                <a
-                        target="_blank" title="hyprEVO: Youtube"
-                        href="https://www.youtube.com/channel/UCRS9SseT4i-HjezhEKMX2Sg">Youtube</a>. Also check out our
-                official podcast <span>hypr<span>STORM</span>&trade;</span> on <a target="_blank"
-                                                                                  title="hyprSTORM Podcast"
-                                                                                  href="https://soundcloud.com/hypr-evo">SoundCloud</a>.
-            </p>
-            <video loop="true" muted="" autoplay="" id="bgvid" preload="auto" class="hide-for-small-only">
-                <source src="vid/heBGvid.mp4">
-            </video>
-        </div>
-        <div class="main__contentBlock main__contentBlock--right js-feat-wrap">
+@@include('modules/heading.html')
+@@include('modules/main.html')
+@@include('modules/news.html')
+@@include('modules/teamChannels.html')
+@@include('modules/podcast.html')
+@@include('modules/footer.html')
 
-         <div style="display:block;">
-             <div class="main__contentBlock-content main__contentBlock-content--news" id="js-newsLink-wrap">
-
-                 <div class="main__contentBlock-subhead padded-lg">
-                     Loading News...
-                 </div>
-             </div>
-         </div>
-        </div>
-    </div>
-</div>
-<div class="footer">
-    <ul class="footer__social js-footer-social">
-        <li>
-            <a target="_blank" title="hyprEVO: Facebook" href="https://www.facebook.com/hyprevofb/"><i
-                    class="fa fa-facebook"></i></a>
-        </li>
-        <li>
-            <a target="_blank" title="hyprEVO: Instagram" href="https://www.instagram.com/hyprEVO/"><i
-                    class="fa fa-instagram"></i></a>
-        </li>
-        <li>
-            <a target="_blank" title="hyprEVO: Twitter" href="https://twitter.com/hyprevo"><i
-                    class="fa fa-twitter"></i></a>
-        </li>
-        <li>
-            <a target="_blank" title="hyprEVO: Google+" href="https://plus.google.com/+HyprEvo"><i
-                    class="fa fa-google-plus"></i></a>
-        </li>
-        <li>
-            <a target="_blank" title="hyprEVO: Youtube"
-               href="https://www.youtube.com/channel/UCRS9SseT4i-HjezhEKMX2Sg"><i
-                    class="fa fa-youtube-play"></i></a>
-        </li>
-        <li>
-            <a target="_blank" title="hyprSTORM Podcast" href="https://soundcloud.com/hypr-evo"><i
-                    class="fa fa-soundcloud"></i></a>
-        </li>
-
-    </ul>
-    <div class="footer__copyright">
-        <p>©2018 hyprEVO, All rights reserved. Always Evolving. Version <a href="https://github.com/hyprEVO/hyprEVO"
-                                                                           target="_blank" title="Source">4.1.1</a>.
-            News powered by <a href="https://www.gameinformer.com/" title="GameInformer"
-                               target="_blank">GameInformer</a> & <a
-                    href="https://www.yahoo.com/"
-                    target="_blank" title="Yahoo">Yahoo</a></p>
-    </div>
-    <div class="footer__logo">
-        <img class="footer__logo-img" title="Evolving soon..." src="img/logo.svg" alt="">
-    </div>
-</div>
-<input type="text" hidden id="js-catchData">
 <!--Scripts-->
-<script src="js/app.js?v=4.0.1"></script>
+@@include('modules/scripts.html')
 </body>
 </html>
+
 
 

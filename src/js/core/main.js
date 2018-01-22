@@ -74,7 +74,7 @@ function injectScript(url) {
 //MV Featured
 function handleResponseMVfeat(response) {
     //Throwing MarzV feed into the featured slots for now
-    var cleanData = response.query.results.feed.entry.slice(1, 4);
+    var cleanData = response.query.results.feed.entry.slice(0, 3);
     doHandlebars(cleanData, "#js-MVnewsLink-template", "#js-newsLink-wrap", "html");
     return response;
 }
@@ -102,7 +102,7 @@ function handleResponseMVyt(response) {
 $(document).ready(function () {
 
     loadFeed("http://www.gameinformer.com/b/mainfeed.aspx?Tags=news", "News");
-    loadFeed("http://www.marzvindicator.com/feeds/posts/default?alt=rss", "MVfeat");
+    loadFeed("http://segasense.blogspot.com/feeds/posts/default?alt=rss", "MVfeat");
     loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCNj11HAYuO0LaCKKGSGPL8g", "QCyt");
     loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCQkZLuIepmT7wCFGhE_1E_A", "MVyt");
 

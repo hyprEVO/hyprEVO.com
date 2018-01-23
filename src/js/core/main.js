@@ -14,11 +14,11 @@
 
 //Featured Post Object
 var featData = {
-    contentType: " hyprCLIP",
-    title: "SpecsOfTheFli  //  Destiny 2 ",
-    desc: "Destiny 2 gameplay clip  #NeverGetsOld #Destiny2 #Bungie #hypREGIME #hyprEVO #hyprClips #Destiny #gaming #SpecsOfTheFli",
-    url: "https://twitter.com/hyprEvo/status/954526479626526720",
-    imgPath: "img/featImg-hClips.jpg",
+    contentType: "Podcast",
+    title: "hyprSTORM #5: The Mass Effect Episode ",
+    desc: "Dread King Dave, KingFiftyCal, MarzVindicator, and Zillla sit down to talk about their shared love for Mass Effect, the space RPG franchise by Bioware. This is Commander Shepard's favorite episode.",
+    url: "https://soundcloud.com/hypr-evo/hyprstorm-5",
+    imgPath: "img/featImg-hStorm.jpg",
     icon: "video-camera"
 };
 
@@ -102,7 +102,7 @@ function handleResponseMVyt(response) {
 $(document).ready(function () {
 
     loadFeed("http://www.gameinformer.com/b/mainfeed.aspx?Tags=news", "News");
-    loadFeed("http://segasense.blogspot.com/feeds/posts/default?alt=rss", "MVfeat");
+    loadFeed("http://www.marzvindicator.com/feeds/posts/default?alt=rss", "MVfeat");
     loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCNj11HAYuO0LaCKKGSGPL8g", "QCyt");
     loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCQkZLuIepmT7wCFGhE_1E_A", "MVyt");
 

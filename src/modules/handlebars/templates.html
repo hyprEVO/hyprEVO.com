@@ -34,6 +34,24 @@
 
     {{/each}}
 </script>
+<script type="text/x-handlebars-template" id="js-SSnewsLink-template">
+    {{#each this}}
+
+    <a href="{{this.link.href}}" class="main__contentBlock-newsLink main__contentBlock-newsLink-node js-contentBlock-news" title=" {{this.title}}"
+       target="_blank" data-bgImg="">
+        <div class="main__contentBlock-contentWrap">
+            <div class="main__contentBlock-heading">
+                <i class="fa fa-rss" aria-hidden="true"></i> Sega Sense
+            </div>
+            <div class="main__contentBlock-subhead main__contentBlock-subhead--news main__contentBlock-subhead--news-feat">
+                {{this.title}}
+            </div>
+        </div>
+        <img src="{{extractURL this.summary.content}}" alt="">
+    </a>
+
+    {{/each}}
+</script>
 <script type="text/x-handlebars-template" id="js-feat-template">
 
     <a href="{{url}}" class="main__contentBlock-content main__contentBlock-content--feat js-feat-desk"

@@ -75,7 +75,7 @@ function injectScript(url) {
 function handleResponseMVfeat(response) {
     //Throwing MarzV feed into the featured slots for now
     var cleanData = response.query.results.feed.entry.slice(0, 3);
-    doHandlebars(cleanData, "#js-MVnewsLink-template", "#js-newsLink-wrap", "html");
+   // doHandlebars(cleanData, "#js-MVnewsLink-template", "#js-newsLink-wrap", "html");
     return response;
 }
 
@@ -83,6 +83,16 @@ function handleResponseMVfeat(response) {
 function handleResponseNews(response) {
     var cleanData = response.query.results.feed.entry.slice(0, 4);
     doHandlebars(cleanData, "#js-newsLink-template", ".js-news-wrap", "html");
+}
+
+//SegaSense Feed (scrubbed)
+
+function handleResponseSS(response) {
+    // http://segasense.blogspot.com/
+    var rawData = response.query.results.feed.entry;
+    var cleanData = response.query.results.feed.entry.slice(0, 3);
+   doHandlebars(cleanData, "#js-SSnewsLink-template", "#js-newsLink-wrap", "html");
+    console.log(rawData);
 }
 
 //QC Youtube Feed
@@ -97,14 +107,34 @@ function handleResponseMVyt(response) {
     doHandlebars(cleanData.slice(0, 5), "#js-vidListMV-template", ".js-vidMV-wrap", "append");
 }
 
+//Use github api to get latest tag dynamically
+function latestTag() {
+    var gitHubPath = 'hyprevo/hyprevo.com';
+    var url = 'https://api.github.com/repos/' + gitHubPath + '/tags';
+
+    $.get(url).done(function (data) {
+        var versions = data.sort(function (v1, v2) {
+            return semver.compare(v2.name, v1.name)
+        });
+        $('.tag-result').html(versions[0].name);
+    });
+}
+
 
 //------------------DOC READY------------------//
 $(document).ready(function () {
 
+    latestTag();
+    loadFeed("http://segasense.blogspot.com/feeds/posts/default?alt=rss", "SS");
     loadFeed("http://www.gameinformer.com/b/mainfeed.aspx?Tags=news", "News");
     loadFeed("http://www.marzvindicator.com/feeds/posts/default?alt=rss", "MVfeat");
     loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCNj11HAYuO0LaCKKGSGPL8g", "QCyt");
     loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCQkZLuIepmT7wCFGhE_1E_A", "MVyt");
+    setTimeout(function () {
+        if ($('.js-news-wrap a').length < 1) {
+            $('.js-news-wrap .main__contentBlock-subhead ').html("Error loading feed, please reload page.")
+        }
+    }, 2000);
 
     //Render feat post
     if (window.matchMedia("(min-width: 1668px)").matches) {

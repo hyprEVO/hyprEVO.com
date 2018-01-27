@@ -1,7 +1,6 @@
 html,
 body {
   background: url('../img/body-bg.png')repeat $dark-grey;
-  background-attachment: fixed;
   margin:0;
   color: white;
   &:before{

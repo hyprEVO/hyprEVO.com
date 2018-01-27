@@ -5,9 +5,6 @@
     padding: $space-md;
     position: relative;
     z-index: 1;
-    &:hover{
-      transform:scale(1.05);
-    }
     &-img {
       max-width: 280px;
       width:100%;

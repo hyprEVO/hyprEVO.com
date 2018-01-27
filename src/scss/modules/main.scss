@@ -393,7 +393,6 @@ $varWidth: 1200px;
   @include transition(all 700ms ease-in-out);
   opacity: 1;
 }
-
 body.no-js {
   .main {
     @include transition(all 700ms ease-in-out);

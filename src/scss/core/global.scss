@@ -1,9 +1,9 @@
 html,
 body {
-  background: url('../img/body-bg.png')repeat $dark-grey;
-  margin:0;
+  background: url('../img/body-bg.png') repeat $dark-grey;
+  margin: 0;
   color: white;
-  &:before{
+  &:before {
     content: "";
     height: 200px;
     width: 100%;
@@ -20,6 +20,7 @@ body {
 
   }
 }
+
 .content {
   margin: 0 auto;
   max-width: 960px;
@@ -38,63 +39,99 @@ body {
       display: none;
     }
   }
-  i{
-    font-family:FontAwesome !important;
+  i {
+    font-family: FontAwesome !important;
   }
 }
 
-.content{
-  box-sizing:border-box;
-  h2{
+.content {
+  box-sizing: border-box;
+  h2 {
     text-transform: uppercase;
     font-family: $altHead;
   }
-  h3{
+  h3 {
     //font-family: $altHead;
-    color:$green;
+    color: $green;
   }
 }
-.padded{
-  &-sm{
-    padding:$space-sm;
+
+.padded {
+  &-sm {
+    padding: $space-sm;
   }
-  &-md{
-    padding:$space-md;
+  &-md {
+    padding: $space-md;
   }
-  &-lg{
-    padding:$space-lg;
-  }
-}
-.padded-topBottom{
-  &-sm{
-    padding:$space-sm 0;
-  }
-  &-md{
-    padding:$space-md 0;
-  }
-  &-lg{
-    padding:$space-lg 0;
+  &-lg {
+    padding: $space-lg;
   }
 }
-.padded-leftRight{
-  &-sm{
-    padding:0 $space-sm;
+
+.padded-topBottom {
+  &-sm {
+    padding: $space-sm 0;
   }
-  &-md{
-    padding:0 $space-md;
+  &-md {
+    padding: $space-md 0;
   }
-  &-lg{
-    padding:0 $space-lg;
+  &-lg {
+    padding: $space-lg 0;
   }
 }
-.nopad-left{
-  padding-left:0;
+
+.padded-leftRight {
+  &-sm {
+    padding: 0 $space-sm;
+  }
+  &-md {
+    padding: 0 $space-md;
+  }
+  &-lg {
+    padding: 0 $space-lg;
+  }
 }
-.centered{
-  text-align:center;
+
+.nopad-left {
+  padding-left: 0;
 }
-.hyprGreen{
-  color:$green;
+
+.centered {
+  text-align: center;
+}
+
+.hyprGreen {
+  color: $green;
+}
+
+.container{
+  margin: 0 auto;
+  max-width: 960px;
+  width: 95%;
+  @media all and (min-width: 600px) {
+    width: 85%;
+    max-width: 1372px;
+  }
+  padding: 0;
+  img{
+    max-width:100%;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h5 {
+    margin: 0;
+    font-weight: normal;
+    font-family: $haHead;
+    &:before {
+      display: none;
+    }
+  }
+  i {
+    font-family: FontAwesome !important;
+  }
 }
 
 //Common media queries, with color test

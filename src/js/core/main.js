@@ -14,11 +14,11 @@
 
 //Featured Post Object
 var featData = {
-    contentType: "Podcast",
-    title: "hyprSTORM #5: The Mass Effect Episode ",
-    desc: "Dread King Dave, KingFiftyCal, MarzVindicator, and Zillla sit down to talk about their shared love for Mass Effect, the space RPG franchise by Bioware. This is Commander Shepard's favorite episode.",
-    url: "https://soundcloud.com/hypr-evo/hyprstorm-5",
-    imgPath: "img/featImg-hStorm.jpg",
+    contentType: "Video",
+    title: "MarzCast: Working in the Industry [An Interview with KuroDon85]",
+    desc: "In this episode MarzVindicator covers the Nintendo Switch's selling dominance, and then interviews Kurodon85 who tells us about working in the gaming industry as a Localization Lead in Tokyo.",
+    url: "https://www.youtube.com/watch?v=4GbUhdDqWeA&t=1s",
+    imgPath: "img/featImg-hClips.jpg",
     icon: "video-camera"
 };
 

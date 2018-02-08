@@ -82,7 +82,7 @@ gulp.task('make-js', function () {
 
     return gulp.src([srcDir + 'js/lib/*.js', srcDir + 'js/core/*.js'])
         .pipe(concat('app.js'))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(buildDir + 'js/'))
         .pipe(gulp.dest(altDir + 'js/'));
 });

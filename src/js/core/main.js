@@ -14,11 +14,11 @@
 
 //Featured Post Object
 var featData = {
-    contentType: "Video",
-    title: "MarzCast: Working in the Industry [An Interview with KuroDon85]",
-    desc: "In this episode MarzVindicator covers the Nintendo Switch's selling dominance, and then interviews Kurodon85 who tells us about working in the gaming industry as a Localization Lead in Tokyo.",
-    url: "https://www.youtube.com/watch?v=4GbUhdDqWeA&t=1s",
-    imgPath: "img/featImg-hClips.jpg",
+    contentType: "Review Video",
+    title: "Quick Reviews: Monster Hunter World",
+    desc: "This episode covers the pros and cons of the latest release in the Monster Hunter franchise. Review by MarzVindicator.",
+    url: "https://www.youtube.com/watch?v=XRnrlUy5vwg",
+    imgPath: "img/featImg-QR-MH.jpg",
     icon: "video-camera"
 };
 

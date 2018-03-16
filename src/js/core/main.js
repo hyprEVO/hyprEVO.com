@@ -14,11 +14,11 @@
 
 //Featured Post Object
 var featData = {
-    contentType: "Review Video",
-    title: "Quick Reviews: Monster Hunter World",
-    desc: "This episode covers the pros and cons of the latest release in the Monster Hunter franchise. Review by MarzVindicator.",
-    url: "https://www.youtube.com/watch?v=XRnrlUy5vwg",
-    imgPath: "img/featImg-QR-MH.jpg",
+    contentType: "Video",
+    title: "Revisiting Sonic Adventure",
+    desc: "Marz Vindicator goes deep with Sonic Adventure as part of the ongoing series 'Dreams ReVisited'",
+    url: "https://www.youtube.com/watch?v=4-zerCvIYJQ",
+    imgPath: "img/featImg-sonic.jpg",
     icon: "video-camera"
 };
 
@@ -125,7 +125,7 @@ function latestTag() {
 $(document).ready(function () {
 
     latestTag();
-    loadFeed("http://segasense.blogspot.com/feeds/posts/default?alt=rss", "SS");
+   // loadFeed("http://segasense.blogspot.com/feeds/posts/default?alt=rss", "SS");
     loadFeed("http://www.gameinformer.com/b/mainfeed.aspx?Tags=news", "News");
     loadFeed("http://www.marzvindicator.com/feeds/posts/default?alt=rss", "MVfeat");
     loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCNj11HAYuO0LaCKKGSGPL8g", "QCyt");

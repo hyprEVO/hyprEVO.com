@@ -15,10 +15,10 @@
 //Featured Post Object
 var featData = {
     contentType: "Video",
-    title: "Revisiting Sonic Adventure",
-    desc: "Marz Vindicator goes deep with Sonic Adventure as part of the ongoing series 'Dreams ReVisited'",
-    url: "https://www.youtube.com/watch?v=4-zerCvIYJQ",
-    imgPath: "img/featImg-sonic.jpg",
+    title: "Let's Play Bug! & Bug Too! 002",
+    desc: "Queasy Crayfish is back again with more gameplay from Bug! and Bug! Too as part of his ongoing series 'Return to Saturn'",
+    url: "https://www.youtube.com/watch?v=ibEnK9z_xgw",
+    imgPath: "img/featImg-QC.jpg",
     icon: "video-camera"
 };
 

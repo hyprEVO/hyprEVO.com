@@ -15,10 +15,10 @@
 //Featured Post Object
 var featData = {
     contentType: "Video",
-    title: "Let's Play Bug! & Bug Too! 002",
-    desc: "Queasy Crayfish is back again with more gameplay from Bug! and Bug! Too as part of his ongoing series 'Return to Saturn'",
-    url: "https://www.youtube.com/watch?v=ibEnK9z_xgw",
-    imgPath: "img/featImg-QC.jpg",
+    title: "King Fifty Cal Teaser",
+    desc: "Stay tuned for more content from King 50 himself. Coming soon!",
+    url: "https://www.youtube.com/watch?v=a1kDvZm0yck",
+    imgPath: "img/featImg-K50.jpg",
     icon: "video-camera"
 };
 

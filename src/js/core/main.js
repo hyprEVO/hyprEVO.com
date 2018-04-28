@@ -15,10 +15,10 @@
 //Featured Post Object
 var featData = {
     contentType: "Video",
-    title: "King Fifty Cal Teaser",
-    desc: "Stay tuned for more content from King 50 himself. Coming soon!",
-    url: "https://www.youtube.com/watch?v=a1kDvZm0yck",
-    imgPath: "img/featImg-K50.jpg",
+    title: "Quick Review: God Of War",
+    desc: "QueasyCrayfish drops in to discuss his thoughts on the recently released God of War!",
+    url: "https://www.youtube.com/watch?v=IW3fgvjAHAg&lc=z23mzrkgpwbudp52sacdp435xa2vr3sojnq3nv0l1zxw03c010c",
+    imgPath: "img/featImg-gow.jpg",
     icon: "video-camera"
 };
 
@@ -86,7 +86,6 @@ function handleResponseNews(response) {
 }
 
 //SegaSense Feed (scrubbed)
-
 function handleResponseSS(response) {
     // http://segasense.blogspot.com/
     var rawData = response.query.results.feed.entry;
@@ -130,6 +129,8 @@ $(document).ready(function () {
     loadFeed("http://www.marzvindicator.com/feeds/posts/default?alt=rss", "MVfeat");
     loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCNj11HAYuO0LaCKKGSGPL8g", "QCyt");
     loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCQkZLuIepmT7wCFGhE_1E_A", "MVyt");
+
+    //New error handling
     setTimeout(function () {
         if ($('.js-news-wrap a').length < 1) {
             $('.js-news-wrap .main__contentBlock-subhead ').html("Error loading feed, please reload page.")

@@ -14,12 +14,12 @@
 
 //Featured Post Object
 var featData = {
-    contentType: "Video",
-    title: "Quick Review: God Of War",
-    desc: "QueasyCrayfish drops in to discuss his thoughts on the recently released God of War!",
-    url: "https://www.youtube.com/watch?v=IW3fgvjAHAg&lc=z23mzrkgpwbudp52sacdp435xa2vr3sojnq3nv0l1zxw03c010c",
-    imgPath: "img/featImg-gow.jpg",
-    icon: "video-camera"
+    contentType: "Podcast",
+    title: "Status Quo #1", 
+    desc: "Marz Vindicator and Queasy Crayfish bring you Status Quo,The place to discuss Gaming Trends past and Present. This weeks topics cover God Of War, Infinity War, and the first ever E3",
+    url: "https://soundcloud.com/hypr-evo/status-quo-episode-i-god-of-war-avengersiw-e3-and-sega-saturn",
+    imgPath: "img/featImg-SQ1.jpg",
+    icon: "soundcloud"
 };
 
 //Helper function to extract img path from rss content

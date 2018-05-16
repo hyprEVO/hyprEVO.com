@@ -15,11 +15,11 @@
 //Featured Post Object
 var featData = {
     contentType: "Podcast",
-    title: "Status Quo #1", 
-    desc: "Marz Vindicator and Queasy Crayfish bring you Status Quo,The place to discuss Gaming Trends past and Present. This weeks topics cover God Of War, Infinity War, and the first ever E3",
-    url: "https://soundcloud.com/hypr-evo/status-quo-episode-i-god-of-war-avengersiw-e3-and-sega-saturn",
-    imgPath: "img/featImg-SQ1.jpg",
-    icon: "soundcloud"
+    title: "Status Quo #2",
+    desc: "Marz Vindicator and Queasy Crayfish bring you Status Quo,The place to discuss Gaming Trends past and Present. This weeks topics cover Re-Releases, Destiny 2, and Gamestop",
+    url: "https://soundcloud.com/hypr-evo/status-quo-episode-2-re-releases-destiny-2-gamestop",
+    imgPath: "img/featImg-SQ2.jpg",
+    icon: "soundcloud"gulp loca
 };
 
 //Helper function to extract img path from rss content

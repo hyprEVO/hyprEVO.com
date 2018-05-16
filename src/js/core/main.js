@@ -19,7 +19,7 @@ var featData = {
     desc: "Marz Vindicator and Queasy Crayfish bring you Status Quo,The place to discuss Gaming Trends past and Present. This weeks topics cover Re-Releases, Destiny 2, and Gamestop",
     url: "https://soundcloud.com/hypr-evo/status-quo-episode-2-re-releases-destiny-2-gamestop",
     imgPath: "img/featImg-SQ2.jpg",
-    icon: "soundcloud"gulp loca
+    icon: "soundcloud"
 };
 
 //Helper function to extract img path from rss content

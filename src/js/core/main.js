@@ -17,7 +17,7 @@ var featData = {
     contentType: "Podcast",
     title: "Status Quo #3",
     desc: "Marz Vindicator and Queasy Crayfish bring you Status Quo,The place to discuss Gaming Trends past and Present. This weeks topics cover The SoulsBorne Genre, Mobile Games, & Fighting Games",
-    url: "https://soundcloud.com/hypr-evo/status-quo-episode-2-re-releases-destiny-2-gamestop",
+    url: "https://soundcloud.com/hypr-evo/status-quo-iii-the-soulsborne-genre-mobile-games-fighting-games",
     imgPath: "img/featImg-SQ1.jpg",
     icon: "soundcloud"
 };

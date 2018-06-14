@@ -14,12 +14,12 @@
 
 //Featured Post Object
 var featData = {
-    contentType: "Podcast",
-    title: "Status Quo #3",
-    desc: "Marz Vindicator and Queasy Crayfish bring you Status Quo,The place to discuss Gaming Trends past and Present. This weeks topics cover The SoulsBorne Genre, Mobile Games, & Fighting Games",
-    url: "https://soundcloud.com/hypr-evo/status-quo-iii-the-soulsborne-genre-mobile-games-fighting-games",
-    imgPath: "img/featImg-SQ1.jpg",
-    icon: "soundcloud"
+    contentType: "Video",
+    title: "Queasy Comments: E3 RECAP",
+    desc: "Queasy Crayfish brings some of his quick takes on what he saw at E3 this year.",
+    url: "https://www.youtube.com/watch?v=DsEuNa5Cpyg&feature=youtu.be",
+    imgPath: "img/featImg-QC.jpg",
+    icon: "youtube"
 };
 
 //Helper function to extract img path from rss content

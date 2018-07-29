@@ -14,12 +14,12 @@
 
 //Featured Post Object
 var featData = {
-    contentType: "Video",
-    title: "Queasy Comments: E3 RECAP",
-    desc: "Queasy Crayfish brings some of his quick takes on what he saw at E3 this year.",
-    url: "https://www.youtube.com/watch?v=DsEuNa5Cpyg&feature=youtu.be",
-    imgPath: "img/featImg-QC.jpg",
-    icon: "youtube"
+    contentType: "Podcast",
+    title: "hyprSTORM #6: The E3 Episode",
+    desc: "Dread King Dave, King 50 Cal, Marz Vindicator, Queasy Crayfish, and Zillla sit down to discuss their thoughts on E3 2018.",
+    url: "https://soundcloud.com/hypr-evo/hyprstorm-6/s-FqMPF",
+    imgPath: "img/featImg-hStorm6.jpg",
+    icon: "soundcloud"
 };
 
 //Helper function to extract img path from rss content

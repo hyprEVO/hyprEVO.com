@@ -15,10 +15,10 @@
 //Featured Post Object
 var featData = {
     contentType: "Podcast",
-    title: "hyprSTORM #6: The E3 Episode",
-    desc: "Dread King Dave, King 50 Cal, Marz Vindicator, Queasy Crayfish, and Zillla sit down to discuss their thoughts on E3 2018.",
-    url: "https://soundcloud.com/hypr-evo/hyprstorm-6/s-FqMPF",
-    imgPath: "img/featImg-hStorm6.jpg",
+    title: "Status Quo #13",
+    desc: " MV and QC discuss how gaming anniversaries should be handled, if retro games are as good as we remember, why this generation isn't over yet and finally they discuss new games they've been playing, No Man's Sky Next, Octopath Traveler and Sonic Mania plus.",
+    url: "https://soundcloud.com/hypr-evo/status-quo-13-retro-evaluation-game-anniversaries-gens-not-over-yet-roundup",
+    imgPath: "img/featImg-sq13.jpg",
     icon: "soundcloud"
 };
 

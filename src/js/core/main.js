@@ -18,7 +18,7 @@ var featData = {
     title: "Status Quo #13",
     desc: " MV and QC discuss how gaming anniversaries should be handled, if retro games are as good as we remember, why this generation isn't over yet and finally they discuss new games they've been playing, No Man's Sky Next, Octopath Traveler and Sonic Mania plus.",
     url: "https://soundcloud.com/hypr-evo/status-quo-13-retro-evaluation-game-anniversaries-gens-not-over-yet-roundup",
-    imgPath: "img/featImg-sq13.jpg",
+    imgPath: "img/featImg-SQ13.jpg",
     icon: "soundcloud"
 };
 

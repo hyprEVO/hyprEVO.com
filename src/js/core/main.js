@@ -15,10 +15,10 @@
 //Featured Post Object
 var featData = {
     contentType: "Podcast",
-    title: "Status Quo #13",
-    desc: " MV and QC discuss how gaming anniversaries should be handled, if retro games are as good as we remember, why this generation isn't over yet and finally they discuss new games they've been playing, No Man's Sky Next, Octopath Traveler and Sonic Mania plus.",
-    url: "https://soundcloud.com/hypr-evo/status-quo-13-retro-evaluation-game-anniversaries-gens-not-over-yet-roundup",
-    imgPath: "img/featImg-SQ13.jpg",
+    title: "Status Quo #15",
+    desc: " MarzVindicator and QueasyCrayfish are back to discuss Demos Betas and Alphas, the various ways to preview games, and should games focus on making new stories, or rehashing the ones we know?",
+    url: 'https://soundcloud.com/hypr-evo/status-quo-15-demosbetas-new-stories-art-style-vs-graphics-crossovers-guests',
+    imgPath: "img/featImg-SQ.jpg",
     icon: "soundcloud"
 };
 
@@ -75,7 +75,7 @@ function injectScript(url) {
 function handleResponseMVfeat(response) {
     //Throwing MarzV feed into the featured slots for now
     var cleanData = response.query.results.feed.entry.slice(0, 3);
-   // doHandlebars(cleanData, "#js-MVnewsLink-template", "#js-newsLink-wrap", "html");
+    // doHandlebars(cleanData, "#js-MVnewsLink-template", "#js-newsLink-wrap", "html");
     return response;
 }
 
@@ -90,7 +90,7 @@ function handleResponseSS(response) {
     // http://segasense.blogspot.com/
     var rawData = response.query.results.feed.entry;
     var cleanData = response.query.results.feed.entry.slice(0, 3);
-   doHandlebars(cleanData, "#js-SSnewsLink-template", "#js-newsLink-wrap", "html");
+    doHandlebars(cleanData, "#js-SSnewsLink-template", "#js-newsLink-wrap", "html");
     console.log(rawData);
 }
 
@@ -124,7 +124,7 @@ function latestTag() {
 $(document).ready(function () {
 
     latestTag();
-   // loadFeed("http://segasense.blogspot.com/feeds/posts/default?alt=rss", "SS");
+    // loadFeed("http://segasense.blogspot.com/feeds/posts/default?alt=rss", "SS");
     loadFeed("http://www.gameinformer.com/b/mainfeed.aspx?Tags=news", "News");
     loadFeed("http://www.marzvindicator.com/feeds/posts/default?alt=rss", "MVfeat");
     loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCNj11HAYuO0LaCKKGSGPL8g", "QCyt");

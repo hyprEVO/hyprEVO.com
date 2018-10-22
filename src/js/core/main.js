@@ -15,9 +15,9 @@
 //Featured Post Object
 var featData = {
     contentType: "Podcast",
-    title: "Status Quo #15",
-    desc: " MarzVindicator and QueasyCrayfish are back to discuss Demos Betas and Alphas, the various ways to preview games, and should games focus on making new stories, or rehashing the ones we know?",
-    url: 'https://soundcloud.com/hypr-evo/status-quo-15-demosbetas-new-stories-art-style-vs-graphics-crossovers-guests',
+    title: "Status Quo #17",
+    desc: " In this 17th episode, Marz and Queasy discuss the current state of Capcom, games with development issues, racing games past and present, and Marz Vindicator details his recent epiphany in regard to game collecting.",
+    url: 'https://soundcloud.com/hypr-evo/status-quo-17-whats-wrong-with-capcom-games-with-issues-racing-games-mvs-manifesto',
     imgPath: "img/featImg-SQ.jpg",
     icon: "soundcloud"
 };

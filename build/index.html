@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>hyprEVO&trade;: Evolved</title>
+    <meta property="og:title" content="hyprEVO&trade;: Evolution">
+    <meta property="og:site_name" content="hyprEVO&trade;: Evolution">
+    <meta property="og:image" content="http://hyprevo.com/img/fb-o-graph.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@hyprevo">
+    <meta name="twitter:creator" content="@hyprevo">
+    <meta name="twitter:title" content="hyprEVO&trade;: Evolution">
+    <meta name="twitter:description" content="hyprEVO&trade; is a media and content network focused on the evolving worlds of video games and technology.">
+    <meta name="twitter:image" content="http://hyprevo.com/img/fb-o-graph.jpg">
+    <meta name="keywords"
+          content="hyprEVO hypr EVO hypr Evolution  hypREGIME hyprFIGHTteam Zillla ZilllaTheGod Zillla_TheGod GodZillla MarzVindicator DreadKingDave KingFiftyCal SpecsOfTheFli Shidoni11 QueasyCrayFish video games xbox playstation pc nintendo sony microsoft">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="description" property="og:description"
+          content="hyprEVO&trade; is a media and content network focused on the evolving worlds of video games and technology.">
+    <link href='css/style.css?v=4.4' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="img/favicon.png"/>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-20811811-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-20811811-2');
+    </script>
+</head>
+<body>
+<!--Handlebars templates-->
+<script type="text/x-handlebars-template" id="js-newsLink-template">
+    {{#each this}}
+
+    <a href="{{this.link.href}}" class="main__contentBlock-newsLink main__contentBlock-newsLink-node js-contentBlock-news" title=" {{this.title}}"
+       target="_blank" data-bgImg="">
+        <div class="main__contentBlock-contentWrap">
+            <div class="main__contentBlock-heading">
+                <i class="fa fa-rss" aria-hidden="true"></i> News
+            </div>
+            <div class="main__contentBlock-subhead main__contentBlock-subhead--news">
+                {{this.title}}
+            </div>
+        </div>
+        <img src="{{extractURL this.summary.content}}" alt="">
+    </a>
+
+    {{/each}}
+</script>
+<script type="text/x-handlebars-template" id="js-MVnewsLink-template">
+    {{#each this}}
+
+    <a href="{{this.link.href}}" class="main__contentBlock-newsLink main__contentBlock-newsLink-node js-contentBlock-news" title=" {{this.title}}"
+       target="_blank" data-bgImg="">
+        <div class="main__contentBlock-contentWrap">
+            <div class="main__contentBlock-heading">
+                <i class="fa fa-rss" aria-hidden="true"></i> MarzVindicator
+            </div>
+            <div class="main__contentBlock-subhead main__contentBlock-subhead--news main__contentBlock-subhead--news-feat">
+                {{this.title}}
+            </div>
+        </div>
+        <img src="{{extractURL this.summary.content}}" alt="">
+    </a>
+
+    {{/each}}
+</script>
+<script type="text/x-handlebars-template" id="js-SSnewsLink-template">
+    {{#each this}}
+
+    <a href="{{this.link.href}}" class="main__contentBlock-newsLink main__contentBlock-newsLink-node js-contentBlock-news" title=" {{this.title}}"
+       target="_blank" data-bgImg="">
+        <div class="main__contentBlock-contentWrap">
+            <div class="main__contentBlock-heading">
+                <i class="fa fa-rss" aria-hidden="true"></i> Sega Sense
+            </div>
+            <div class="main__contentBlock-subhead main__contentBlock-subhead--news main__contentBlock-subhead--news-feat">
+                {{this.title}}
+            </div>
+        </div>
+        <img src="{{extractURL this.summary.content}}" alt="">
+    </a>
+
+    {{/each}}
+</script>
+<script type="text/x-handlebars-template" id="js-feat-template">
+
+    <a href="{{url}}" class="main__contentBlock-content main__contentBlock-content--feat js-feat-desk"
+       title="{{title}} #hyprEVO"
+       target="_blank" style="background-image:url({{imgPath}}); ">
+
+        <div class="main__contentBlock-heading">
+            <i class="fa fa-{{icon}}" aria-hidden="true"></i> Featured Content: {{contentType}}
+        </div>
+        <div class="main__contentBlock-subhead">
+            {{title}}
+        </div>
+        <div class="main__contentBlock-descrip">
+            {{desc}}
+        </div>
+
+    </a>
+
+</script>
+<script type="text/x-handlebars-template" id="js-feat-template-mob">
+
+    <div style="display:block"><a href="{{url}}"
+                                  class="main__contentBlock-content main__contentBlock-content--feat js-feat-mob"
+                                  title="{{title}} #hyprEVO"
+                                  target="_blank" style="background-image:url({{imgPath}}); ">
+
+        <div class="main__contentBlock-heading">
+            <i class="fa fa-{{icon}}" aria-hidden="true"></i> Featured Content: {{contentType}}
+        </div>
+        <div class="main__contentBlock-subhead">
+            {{title}}
+        </div>
+        <div class="main__contentBlock-descrip">
+            {{desc}}
+        </div>
+
+    </a></div>
+
+</script>
+<script type="text/x-handlebars-template" id="js-mvLink-template">
+    {{#each this}}
+
+    <a href="{{this.link.href}}" class="main__contentBlock-newsLink js-contentBlock-news" title=" {{this.title}}"
+       target="_blank" data-bgImg="">
+        <div class="main__contentBlock-contentWrap">
+            <div class="main__contentBlock-heading">
+                <i class="fa fa-rss" aria-hidden="true"></i>
+            </div>
+            <div class="main__contentBlock-subhead main__contentBlock-subhead--news">
+                {{this.title}}
+            </div>
+        </div>
+        <img src="{{extractURL this.summary.content}}" alt="">
+    </a>
+
+    {{/each}}
+</script>
+<script type="text/x-handlebars-template" id="js-vidListQC-template">
+    {{#each this}}
+
+    <a href="{{this.link.href}}" class="" title="[Youtube] - {{this.group.description}}"
+       target="_blank" data-bgImg="">
+        <div class="main__contentBlock-contentWrap">
+            <div class="main__contentBlock-heading">
+                <!--<i class="fa fa-rss" aria-hidden="true"></i>-->
+            </div>
+            <div class="main__contentBlock-subhead main__contentBlock-subhead--news">
+                <i class="fa  fa-youtube-play padded-leftRight-sm nopad-left hyprGreen" aria-hidden="true"></i>  {{this.title}}
+            </div>
+        </div>
+    </a>
+
+    {{/each}}
+</script>
+<script type="text/x-handlebars-template" id="js-vidListMV-template">
+    {{#each this}}
+
+    <a href="{{this.link.href}}" class="" title="[Youtube] - {{this.group.description}}"
+       target="_blank" data-bgImg="">
+        <div class="main__contentBlock-contentWrap">
+            <div class="main__contentBlock-heading">
+                <!---->
+            </div>
+            <div class="main__contentBlock-subhead main__contentBlock-subhead--news">
+                <i class="fa  fa-youtube-play padded-leftRight-sm nopad-left hyprGreen" aria-hidden="true"></i>  {{this.title}}
+            </div>
+        </div>
+    </a>
+
+    {{/each}}
+</script>
+
+<!--Meat & Potatoes-->
+<div class="heading">
+    <div class="heading__logo  js-heading__logo">
+        <img class="heading__logo-img" title="Always Evolving" src="img/logotype.svg" alt="">
+    </div>
+</div>
+<div class='main'>
+    <div class="main__contentBlock-wrap">
+        <div class="main__contentBlock " style="width:100%;">
+            <p class="main__contentBlock-blurb"><span>hypr<span>EVO</span>&trade;</span> is a team of gamers and media
+                creators
+                that
+                have joined forces to spread our influence across the globe. We're hard at work growing our empire so
+                check
+                back here for updates. In the meantime, connect with us on a variety of other channels like <a
+                        target="_blank" title="hyprEVO: Facebook"
+                        href="https://www.facebook.com/hyprevofb/">Facebook</a>,
+                <a target="_blank" title="hyprEVO: Instagram" href="https://www.instagram.com/hyprEVO/">Instagram</a>,
+                <a
+                        target="_blank" title="hyprEVO: Twitter" href="https://twitter.com/hyprevo">Twitter</a> and
+                <a
+                        target="_blank" title="hyprEVO: Youtube"
+                        href="https://www.youtube.com/channel/UCRS9SseT4i-HjezhEKMX2Sg">Youtube</a>.
+            </p>
+            <video loop="true" muted="" autoplay="" id="bgvid" preload="auto" class="hide-for-small-only">
+                <source src="vid/heBGvid.mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="footer">
+    <ul class="footer__social js-footer-social">
+        <li>
+            <a target="_blank" title="hyprEVO: Facebook" href="https://www.facebook.com/hyprevofb/"><i
+                    class="fa fa-facebook"></i></a>
+        </li>
+        <li>
+            <a target="_blank" title="hyprEVO: Instagram" href="https://www.instagram.com/hyprEVO/"><i
+                    class="fa fa-instagram"></i></a>
+        </li>
+        <li>
+            <a target="_blank" title="hyprEVO: Twitter" href="https://twitter.com/hyprevo"><i
+                    class="fa fa-twitter"></i></a>
+        </li>
+
+        <li>
+            <a target="_blank" title="hyprEVO: Youtube"
+               href="https://www.youtube.com/channel/UCRS9SseT4i-HjezhEKMX2Sg"><i
+                    class="fa fa-youtube-play"></i></a>
+        </li>
+        <li>
+            <a target="_blank" title="hyprSTORM Podcast" href="https://soundcloud.com/hypr-evo"><i
+                    class="fa fa-soundcloud"></i></a>
+        </li>
+
+    </ul>
+    <div class="footer__copyright">
+        <p>©2018 hyprEVO, All rights reserved. Always Evolving. Version <a href="https://github.com/hyprEVO/hyprEVO"
+                                                                           target="_blank" title="Source"><span class="tag-result"></span></a> |
+            News powered by <a href="https://www.gameinformer.com/" title="GameInformer"
+                               target="_blank">GameInformer</a> & <a
+                    href="https://www.yahoo.com/"
+                    target="_blank" title="Yahoo">Yahoo</a></p>
+    </div>
+    <div class="footer__logo">
+        <img class="footer__logo-img" title="Evolving soon..." src="img/logo.svg" alt="">
+    </div>
+</div>
+
+<!--Scripts-->
+<script src="js/app.js?v=4.3.16"></script>
+</body>
+</html>
+
+
+

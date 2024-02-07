@@ -125,10 +125,10 @@ $(document).ready(function () {
 
     latestTag();
     // loadFeed("http://segasense.blogspot.com/feeds/posts/default?alt=rss", "SS");
-    loadFeed("http://www.gameinformer.com/b/mainfeed.aspx?Tags=news", "News");
-    loadFeed("http://www.marzvindicator.com/feeds/posts/default?alt=rss", "MVfeat");
-    loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCNj11HAYuO0LaCKKGSGPL8g", "QCyt");
-    loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCQkZLuIepmT7wCFGhE_1E_A", "MVyt");
+    // loadFeed("http://www.gameinformer.com/b/mainfeed.aspx?Tags=news", "News");
+    // loadFeed("http://www.marzvindicator.com/feeds/posts/default?alt=rss", "MVfeat");
+    // loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCNj11HAYuO0LaCKKGSGPL8g", "QCyt");
+    // loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCQkZLuIepmT7wCFGhE_1E_A", "MVyt");
 
     //New error handling
     setTimeout(function () {

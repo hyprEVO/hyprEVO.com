@@ -1,6 +1,8 @@
 .main {
   @include clearfix();
   margin-bottom: $space-md;
+  position: relative;
+  z-index: 1;
 
   &__contentBlock {
     height: auto;
@@ -8,25 +10,14 @@
     position: relative;
     overflow: hidden;
 
-    video {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 200%;
-      height: 2000px;
-      margin-top: -1000px;
-      z-index: 0;
-      @media all and (max-width: $screen-sm) {
-        width: auto;
-      }
-    }
+
 
     @media all and (min-width: $varWidth) {
       width: 50%;
 
       &-full {
         width: 100%;
-      } 
+      }
     }
 
     &-wrap {
@@ -39,6 +30,27 @@
       -webkit-box-shadow: 0px 8px 10px -1px rgba(0, 0, 0, 0.15);
       -moz-box-shadow: 0px 8px 10px -1px rgba(0, 0, 0, 0.15);
       box-shadow: 0px 8px 10px -1px rgba(0, 0, 0, 0.15);
+
+      @media all and (min-width: 600px) {
+        width: 85%;
+        max-width: 1372px;
+      }
+
+      @media all and (min-width: $varWidth) {
+        flex-direction: row;
+      }
+
+      @include clearfix();
+    }
+
+    &-wrap-clear {
+   
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      width: 95%;
+   
+
 
       @media all and (min-width: 600px) {
         width: 85%;
@@ -127,13 +139,13 @@
     }
 
     &-blurb {
-      padding: 170px;
+      padding: $space-sm 170px;
       color: #b8b8b8;
       text-align: center;
       margin: 0;
       font-size: 1rem;
       font-family: $haBody;
-      background: rgba(17, 17, 17, 0.85);
+      background: rgba(17, 17, 17, 0);
       z-index: 1;
       position: relative;
 
@@ -158,17 +170,17 @@
       @media all and (min-width: $screen-md) {}
 
       @media all and (max-width: 1667px) {
-        padding: $space-xl;
-       
+        padding: $space-md  $space-lg;
+
       }
 
       @media all and (max-width: 1200px) {
-        padding: $space-lg;
+        padding: $space-md $space-lg;
 
       }
 
       @media all and (max-width: 480px) {
-        padding: $space-md;
+        padding: $space-sm $space-md;
       }
     }
 
@@ -287,7 +299,6 @@
       &-team {
         font-size: 17px;
         padding-top: 0;
-        border-bottom: 1px solid #323535;
         margin-bottom: $space-md;
       }
     }
@@ -311,6 +322,14 @@
             height: 80px;
           }
         }
+
+        @media all and (min-width: 1200px) {
+          font-size: 15px;
+        }
+
+        @media all and (min-width: 1350px) {
+          font-size: 20px;
+        }
       }
     }
 
@@ -331,6 +350,7 @@
     background-clip: initial;
     width: 100%;
     float: none;
+    position: relative;
 
     @media all and (min-width: $varWidth) {
       width: 50%;
@@ -475,8 +495,24 @@
     max-height: 500px;
   }
 
+
+
   @include transition(all 700ms ease-in-out);
   opacity: 1;
+}
+
+video {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  height: 2000px;
+  margin-top: -1000px;
+  z-index: 0;
+  opacity:.15;
+
+  @media all and (max-width: $screen-sm) {
+    width: auto;
+  }
 }
 
 body.no-js {

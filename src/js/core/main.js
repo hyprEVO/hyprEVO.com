@@ -116,14 +116,20 @@ function latestTag() {
             return semver.compare(v2.name, v1.name)
         });
         $('.tag-result').html(versions[0].name);
+
+        let stylePath = $(".cache-bust").attr("href");
+
+        $(".cache-bust").attr("href", stylePath + "?" +  versions[0].name);
+
     });
-}
+} 
 
 
 //------------------DOC READY------------------//
 $(document).ready(function () {
 
     latestTag();
+    
     // loadFeed("http://segasense.blogspot.com/feeds/posts/default?alt=rss", "SS");
     // loadFeed("http://www.gameinformer.com/b/mainfeed.aspx?Tags=news", "News");
     // loadFeed("http://www.marzvindicator.com/feeds/posts/default?alt=rss", "MVfeat");

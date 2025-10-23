@@ -119,50 +119,38 @@ function latestTag() {
 
         let stylePath = $(".cache-bust").attr("href");
 
-        $(".cache-bust").attr("href", stylePath + "?" +  versions[0].name);
+        $(".cache-bust").attr("href", stylePath + "?" + versions[0].name);
 
     });
-} 
+}
 
+//Featured video update function 
+const featVidSwitcher = () => {
+    document.querySelectorAll(".js-vidList-wrap a").forEach(el => {
+        
+        // When video title clicked
+        el.addEventListener("click", e => {
+            
+            // disable default 
+            e.preventDefault();
+            
+            // get href of that particular instance
+            const vidLink = e.currentTarget.getAttribute('href');
+            
+            // clear feature href 
+            // use stored href to replace featured href
+            const featLink = document.querySelector(".js-featVid-wrap iframe");
+
+            if(featLink){
+                featLink.setAttribute("src", vidLink);
+            }
+
+        });
+    }); 
+};
 
 //------------------DOC READY------------------//
 $(document).ready(function () {
-
     latestTag();
-    
-    // loadFeed("http://segasense.blogspot.com/feeds/posts/default?alt=rss", "SS");
-    // loadFeed("http://www.gameinformer.com/b/mainfeed.aspx?Tags=news", "News");
-    // loadFeed("http://www.marzvindicator.com/feeds/posts/default?alt=rss", "MVfeat");
-    // loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCNj11HAYuO0LaCKKGSGPL8g", "QCyt");
-    // loadFeed("https://www.youtube.com/feeds/videos.xml?channel_id=UCQkZLuIepmT7wCFGhE_1E_A", "MVyt");
-
-    //New error handling
-    setTimeout(function () {
-        if ($('.js-news-wrap a').length < 1) {
-            $('.js-news-wrap .main__contentBlock-subhead ').html("Error loading feed, please reload page.")
-        }
-    }, 2000);
-
-    //Render feat post
-    if (window.matchMedia("(min-width: 1668px)").matches) {
-        doHandlebars(featData, "#js-feat-template", ".js-feat-wrap", "prepend");
-    } else {
-        doHandlebars(featData, "#js-feat-template-mob", ".js-feat-wrap", "prepend");
-    }
-    //Fix for ipad rendering, renders feat post depending on size
-    $(window).on('resize', function () {
-        if (window.matchMedia("(min-width: 1668px)").matches) {
-            $('.main__contentBlock-content--feat').remove();
-            if ($(".js-feat-desk").length < 1) {
-                doHandlebars(featData, "#js-feat-template", ".js-feat-wrap", "prepend");
-            }
-        } else {
-            $('.main__contentBlock-content--feat').remove();
-            doHandlebars(featData, "#js-feat-template-mob", ".js-feat-wrap", "prepend");
-            if ($(".js-feat-mob").length < 1) {
-                doHandlebars(featData, "#js-feat-template-mob", ".js-feat-wrap", "append");
-            }
-        }
-    });
-
+    featVidSwitcher();
 }); 
